@@ -36,7 +36,7 @@ docker run --name m169_logtest ubuntu bash -c 'echo "Hallo"; echo "Fehler" >&2'
 
 **Beschreibung:** Der Container wurde gestartet und erzeugte eine normale Ausgabe sowie eine Fehlermeldung.
 
-📸 `images/kn05-a-container-start.png`
+📸 ![alt text](<Screenshot 2026-05-05 031643.png>)
 
 ---
 
@@ -48,7 +48,7 @@ docker logs m169_logtest
 
 **Beschreibung:** Mit diesem Befehl wurden die Logs des Containers angezeigt.
 
-📸 `images/kn05-a-docker-logs.png`
+📸 ![alt text](<Screenshot 2026-05-05 031658.png>)
 
 ---
 
@@ -60,7 +60,7 @@ docker rm m169_logtest
 
 **Beschreibung:** Der gestoppte Container wurde entfernt.
 
-📸 `images/kn05-a-container-delete.png`
+📸 ![alt text](<Screenshot 2026-05-05 031708.png>)
 
 ---
 
@@ -74,7 +74,7 @@ docker run -d --name m169_logtest ubuntu bash -c 'while true; do echo "tick"; sl
 
 **Beschreibung:** Der Container wurde im Hintergrund gestartet und erzeugte jede Sekunde eine Ausgabe.
 
-📸 `images/kn05-a-running-container.png`
+📸 ![alt text](<Screenshot 2026-05-05 031733.png>)
 
 ---
 
@@ -92,7 +92,7 @@ docker logs -f m169_logtest
 
 **Beschreibung:** Mit `-f` wurden die Logs live überwacht.
 
-📸 `images/kn05-a-live-logs.png`
+📸 ![alt text](<Screenshot 2026-05-05 031800.png>)
 
 ---
 
@@ -104,7 +104,7 @@ docker logs m169_logtest | wc -l
 
 **Beschreibung:** Mit diesem Befehl wurde die Anzahl Log-Zeilen gezählt.
 
-📸 `images/kn05-a-log-count.png`
+📸 ![alt text](<Screenshot 2026-05-05 031814.png>)
 
 ---
 
@@ -120,7 +120,7 @@ docker rm m169_logtest
 
 **Beschreibung:** Der Container wurde zuerst gestoppt und danach gelöscht.
 
-📸 `images/kn05-a-stop-remove.png`
+📸 ![alt text](<Screenshot 2026-05-05 031855.png>)
 
 ---
 
@@ -134,7 +134,7 @@ docker run -d --log-driver=syslog ubuntu bash -c 'i=0; while true; do i=$((i+1))
 
 **Beschreibung:** Die Logs wurden direkt in das Syslog des Hosts geschrieben.
 
-📸 `images/kn05-a-syslog-container.png`
+📸 ![alt text](<Screenshot 2026-05-05 032230.png>)
 
 ---
 
@@ -145,8 +145,6 @@ tail -f /var/log/syslog
 ```
 
 **Beschreibung:** Mit diesem Befehl wurden die Logs in Echtzeit überwacht.
-
-📸 `images/kn05-a-tail-syslog.png`
 
 ---
 
@@ -191,8 +189,6 @@ cd m169-scripts/KN05_B
 
 **Beschreibung:** Das bestehende Repository wurde geklont und das passende Verzeichnis geöffnet.
 
-📸 `images/kn05-b-git-clone.png`
-
 ---
 
 ### ⚠️ Fehler – docker compose funktionierte nicht
@@ -204,8 +200,6 @@ unknown shorthand flag: 'd' in -d
 ```
 
 **Beschreibung:** Die installierte Docker-Version unterstützte den Befehl `docker compose` nicht.
-
-📸 `images/kn05-b-docker-compose-error.png`
 
 ---
 
@@ -229,8 +223,6 @@ docker-compose --version
 
 **Beschreibung:** Docker Compose wurde nachinstalliert.
 
-📸 `images/kn05-b-install-compose.png`
-
 ---
 
 ### Docker Compose starten
@@ -241,7 +233,7 @@ docker-compose up -d
 
 **Beschreibung:** Die komplette Monitoring-Umgebung wurde gestartet.
 
-📸 `images/kn05-b-compose-up.png`
+📸 ![alt text](<Screenshot 2026-05-05 032528.png>)
 
 ---
 
@@ -253,8 +245,7 @@ docker-compose up -d
 http://<EC2-Public-IP>:3000
 ```
 
-📸 `images/kn05-b-grafana.png`
-
+📸 ![alt text](<Screenshot 2026-05-05 032908.png>)
 ---
 
 #### cAdvisor
@@ -263,8 +254,6 @@ http://<EC2-Public-IP>:3000
 http://<EC2-Public-IP>:8080
 ```
 
-📸 `images/kn05-b-cadvisor.png`
-
 ---
 
 #### Prometheus
@@ -272,8 +261,6 @@ http://<EC2-Public-IP>:8080
 ```text
 http://<EC2-Public-IP>:9090
 ```
-
-📸 `images/kn05-b-prometheus.png`
 
 ---
 
@@ -293,7 +280,7 @@ http://<EC2-Public-IP>:9090
 
 **Beschreibung:** Das Dashboard 21361 wurde importiert und mit Prometheus verbunden.
 
-📸 `images/kn05-b-dashboard-import.png`
+📸 ![alt text](<Screenshot 2026-05-05 033754-1.png>)
 
 ---
 
@@ -305,8 +292,6 @@ Im Dashboard wurden folgende Metriken angezeigt:
 * Memory Usage
 * Netzwerk
 * Container Status
-
-📸 `images/kn05-b-dashboard-metrics.png`
 
 ---
 
@@ -320,15 +305,11 @@ docker run --rm --name stress-test ubuntu:latest bash -c "apt update && apt inst
 
 **Beschreibung:** Der Container erzeugte CPU-Last für 60 Sekunden.
 
-📸 `images/kn05-b-stress-test.png`
-
 ---
 
 #### Auswirkungen in Grafana
 
 **Beschreibung:** Während des Stresstests stiegen CPU- und RAM-Auslastung deutlich an.
-
-📸 `images/kn05-b-grafana-stress.png`
 
 ---
 
@@ -341,8 +322,6 @@ docker-compose down -v
 ```
 
 **Beschreibung:** Alle Container und Volumes der Monitoring-Umgebung wurden entfernt.
-
-📸 `images/kn05-b-compose-down.png`
 
 ---
 
@@ -380,7 +359,7 @@ Error: Unable to locate package trivy
 
 **Beschreibung:** Das Paket war nicht im Standard-Repository vorhanden.
 
-📸 `images/kn05-c-trivy-error.png`
+📸 ![alt text](<Screenshot 2026-05-05 034547.png>)
 
 ---
 
@@ -418,8 +397,6 @@ sudo apt update
 sudo apt install trivy -y
 ```
 
-📸 `images/kn05-c-install-trivy.png`
-
 ---
 
 ### ⚠️ Fehler – Speicherplatzproblem bei Trivy
@@ -430,8 +407,6 @@ Fatal error: disk quota exceeded
 
 **Beschreibung:** Während des Java-DB Downloads war zu wenig Speicherplatz vorhanden.
 
-📸 `images/kn05-c-trivy-disk-error.png`
-
 ---
 
 ### Lösung – Nur Vulnerability Scanner verwenden
@@ -441,8 +416,6 @@ trivy image --scanners vuln nginx:latest
 ```
 
 **Beschreibung:** Der Scan wurde ohne Secret- und Java-DB durchgeführt.
-
-📸 `images/kn05-c-trivy-scan.png`
 
 ---
 
@@ -456,7 +429,7 @@ docker run --user 1000:1000 nginx
 
 **Beschreibung:** Der Container wurde ohne Root-Rechte gestartet.
 
-📸 `images/kn05-c-non-root.png`
+📸 ![alt text](<Screenshot 2026-05-05 034606.png>)
 
 ---
 
@@ -468,7 +441,7 @@ docker run --read-only --tmpfs /tmp:rw,size=64M nginx
 
 **Beschreibung:** Das Dateisystem wurde schreibgeschützt gestartet.
 
-📸 `images/kn05-c-readonly.png`
+📸 ![alt text](<Screenshot 2026-05-05 034621.png>)
 
 ---
 
@@ -482,8 +455,6 @@ docker: opening seccomp profile (default.json) failed: open default.json: no suc
 
 **Beschreibung:** Die seccomp-Konfigurationsdatei war nicht vorhanden.
 
-📸 `images/kn05-c-seccomp-error.png`
-
 ---
 
 ### Lösung – AppArmor verwenden
@@ -494,7 +465,7 @@ sudo docker run --security-opt apparmor=docker-default nginx
 
 **Beschreibung:** Der Container wurde mit dem Standard-AppArmor-Profil gestartet.
 
-📸 `images/kn05-c-apparmor.png`
+📸 ![alt text](<Screenshot 2026-05-05 034911.png>)
 
 ---
 
