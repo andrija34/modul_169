@@ -25,7 +25,7 @@ cd container-bootstrap/01_container
 
 **Beschreibung:** Mit diesem Befehl wurde das vorbereitete Repository lokal auf die EC2 Instanz heruntergeladen.
 
-📸 `images/kn04-a-git-clone.png`
+📸 ![alt text](<Screenshot 2026-05-04 235819.png>)
 
 ---
 
@@ -47,7 +47,7 @@ background-color: #ebd63d;
 
 **Beschreibung:** Die Webseite musste gemäss Auftrag angepasst werden.
 
-📸 `images/kn04-a-main-css.png`
+📸 ![alt text](<Screenshot 2026-05-05 000823.png>)
 
 ---
 
@@ -60,7 +60,8 @@ mv image-new.png image.png
 
 **Beschreibung:** Das alte Cloud-Native Bild wurde durch das Modul-169 Bild ersetzt.
 
-📸 `images/kn04-a-image-replace.png`
+📸 ![](<Screenshot 2026-05-05 000210.png>)
+
 
 ---
 
@@ -74,7 +75,7 @@ const PORT = 8091;
 
 **Beschreibung:** Die Anwendung wurde auf Port 8091 angepasst.
 
-📸 `images/kn04-a-port-change.png`
+📸 ![alt text](<Screenshot 2026-05-04 235904.png>)
 
 ---
 
@@ -86,8 +87,6 @@ EXPOSE 8091
 
 **Beschreibung:** Der neue Port musste auch im Dockerfile definiert werden.
 
-📸 `images/kn04-a-dockerfile.png`
-
 ---
 
 ### Docker Image bauen
@@ -98,7 +97,7 @@ docker build -t ghcr.io/andrija34/webapp_andrija34_8091:1.0 .
 
 **Beschreibung:** Mit diesem Befehl wurde das Docker Image erstellt.
 
-📸 `images/kn04-a-build.png`
+📸 ![alt text](<Screenshot 2026-05-05 002014.png>)
 
 ---
 
@@ -110,7 +109,7 @@ docker build -t ghcr.io/andrija34/webapp_andrija34_8091:1.0 .
 
 **Lösung:** Verwendung von `ghcr.io`
 
-📸 `images/kn04-a-registry-error.png`
+📸 ![alt text](<Screenshot 2026-05-05 002931.png>)
 
 ---
 
@@ -122,7 +121,7 @@ docker login ghcr.io
 
 **Beschreibung:** Login in die GitHub Container Registry.
 
-📸 `images/kn04-a-login.png`
+📸 ![alt text](<Screenshot 2026-05-05 002815.png>)
 
 ---
 
@@ -134,7 +133,7 @@ docker push ghcr.io/andrija34/webapp_andrija34_8091:1.0
 
 **Beschreibung:** Das Docker Image wurde in die Registry hochgeladen.
 
-📸 `images/kn04-a-push.png`
+📸 ![alt text](<Screenshot 2026-05-05 003047.png>)
 
 ---
 
@@ -146,7 +145,7 @@ docker run -d -p 8091:8091 ghcr.io/andrija34/webapp_andrija34_8091:1.0
 
 **Beschreibung:** Die Anwendung wurde als Container gestartet.
 
-📸 `images/kn04-a-run.png`
+📸 ![alt text](<Screenshot 2026-05-05 003224.png>)
 
 ---
 
@@ -158,7 +157,7 @@ docker run -d -p 8091:8091 ghcr.io/andrija34/webapp_andrija34_8091:1.0
 
 **Lösung:** Port 8091 wurde in den Inbound Rules freigegeben.
 
-📸 `images/kn04-a-timeout-error.png`
+📸 ![alt text](<Screenshot 2026-05-05 003351.png>)
 
 ---
 
@@ -166,7 +165,7 @@ docker run -d -p 8091:8091 ghcr.io/andrija34/webapp_andrija34_8091:1.0
 
 Die Webseite war danach erreichbar unter `http://PUBLIC-IP:8091`
 
-📸 `images/kn04-a-working-website.png`
+📸 ![alt text](<Screenshot 2026-05-05 003626.png>)
 
 ---
 
@@ -213,7 +212,7 @@ networks:
   mil-net:
 ```
 
-📸 `images/kn04-b-network-error.png`
+📸 ![alt text](<Screenshot 2026-05-05 004338.png>)
 
 ---
 
@@ -222,8 +221,6 @@ networks:
 ```bash
 docker compose up -d
 ```
-
-📸 `images/kn04-b-compose-up.png`
 
 ---
 
@@ -236,7 +233,7 @@ docker compose up -d --build
 
 **Beschreibung:** Nach Änderungen musste die Umgebung neu gebaut werden.
 
-📸 `images/kn04-b-compose-rebuild.png`
+📸 ![alt text](<Screenshot 2026-05-05 004806.png>)
 
 ---
 
@@ -244,7 +241,7 @@ docker compose up -d --build
 
 `http://PUBLIC-IP:5169`
 
-📸 `images/kn04-b-working-site.png`
+📸 ![alt text](<Screenshot 2026-05-05 010452.png>)
 
 ---
 
@@ -266,7 +263,7 @@ Es wurde ein Docker Swarm Cluster mit 5 Nodes aufgebaut.
 | Node4 | Worker  |
 | Node5 | Worker  |
 
-📸 `images/kn04-c-architecture.png`
+📸 ![alt text](<Screenshot 2026-05-05 014049.png>)
 
 ---
 
@@ -275,8 +272,7 @@ Es wurde ein Docker Swarm Cluster mit 5 Nodes aufgebaut.
 ```bash
 sudo docker swarm init --advertise-addr 172.31.39.123
 ```
-
-📸 `images/kn04-c-swarm-init.png`
+📸 ![alt text](<Screenshot 2026-05-05 021047.png>)
 
 ---
 
@@ -292,7 +288,7 @@ sudo docker swarm init --advertise-addr 172.31.39.123
 sudo docker swarm init ...
 ```
 
-📸 `images/kn04-c-permission-error.png`
+📸 ![alt text](<Screenshot 2026-05-05 021040.png>)
 
 ---
 
@@ -313,7 +309,7 @@ docker swarm join --token ...
 
 **Beschreibung:** Die übrigen Nodes wurden dem Cluster hinzugefügt.
 
-📸 `images/kn04-c-join-nodes.png`
+📸 ![alt text](<Screenshot 2026-05-05 021053.png>)
 
 ---
 
@@ -325,7 +321,7 @@ sudo docker node ls
 
 **Beschreibung:** Alle 5 Nodes wurden erfolgreich angezeigt.
 
-📸 `images/kn04-c-node-ls.png`
+📸 ![alt text](<Screenshot 2026-05-05 021212.png>)
 
 ---
 
@@ -337,7 +333,7 @@ sudo docker node update --availability drain <NODE>
 
 **Beschreibung:** Damit keine Container auf den Manager Nodes laufen.
 
-📸 `images/kn04-c-drain.png`
+📸 ![alt text](<Screenshot 2026-05-05 021257.png>)
 
 ---
 
@@ -353,7 +349,7 @@ sudo docker service create \
   nginx
 ```
 
-📸 `images/kn04-d-service-create.png`
+📸 ![alt text](<Screenshot 2026-05-05 021356.png>)
 
 ---
 
@@ -363,8 +359,8 @@ sudo docker service create \
 sudo docker service ps 169-web
 ```
 
-📸 `images/kn04-d-service-ps.png`
-
+📸 ![alt text](<Screenshot 2026-05-05 021413.png>)
+![alt text](<Screenshot 2026-05-05 021654.png>)
 ---
 
 ### Service skalieren
@@ -373,7 +369,7 @@ sudo docker service ps 169-web
 sudo docker service scale 169-web=10
 ```
 
-📸 `images/kn04-d-scale.png`
+📸 ![alt text](<Screenshot 2026-05-05 021725.png>)
 
 ---
 
@@ -385,7 +381,7 @@ sudo docker container rm -f <id>
 
 **Beschreibung:** Mehrere Container wurden absichtlich gelöscht.
 
-📸 `images/kn04-d-container-delete.png`
+📸 ![alt text](<Screenshot 2026-05-05 021936.png>)
 
 ---
 
@@ -397,8 +393,8 @@ sudo docker container rm -f <id>
 
 **Bedeutung:** Container wurde manuell beendet.
 
-📸 `images/kn04-d-self-healing.png`
-
+📸 ![alt text](<Screenshot 2026-05-05 022001.png>)
+![alt text](<Screenshot 2026-05-05 022048.png>)
 ---
 
 ## E) Docker Swarm Deklarativ
@@ -413,7 +409,7 @@ published: 5169
 target: 8169
 ```
 
-📸 `images/kn04-e-compose-edit.png`
+📸 ![alt text](<Screenshot 2026-05-05 024207.png>)
 
 ---
 
@@ -423,7 +419,7 @@ target: 8169
 app.run(host="0.0.0.0", port=8169)
 ```
 
-📸 `images/kn04-e-app-py.png`
+📸 ![alt text](<Screenshot 2026-05-05 024224.png>)
 
 ---
 
@@ -433,7 +429,7 @@ app.run(host="0.0.0.0", port=8169)
 EXPOSE 8169
 ```
 
-📸 `images/kn04-e-dockerfile.png`
+📸 ![alt text](<Screenshot 2026-05-05 024237.png>)
 
 ---
 
@@ -443,7 +439,7 @@ EXPOSE 8169
 docker build -t ghcr.io/andrija34/modul_169-swarm-stack:1.0 .
 ```
 
-📸 `images/kn04-e-build.png`
+📸 ![alt text](<Screenshot 2026-05-05 024302.png>)
 
 ---
 
@@ -452,8 +448,6 @@ docker build -t ghcr.io/andrija34/modul_169-swarm-stack:1.0 .
 ```bash
 docker push ghcr.io/andrija34/modul_169-swarm-stack:1.0
 ```
-
-📸 `images/kn04-e-push.png`
 
 ---
 
@@ -471,8 +465,6 @@ docker push ghcr.io/... .
 docker push ghcr.io/...
 ```
 
-📸 `images/kn04-e-push-error.png`
-
 ---
 
 ### Stack deployen
@@ -481,7 +473,7 @@ docker push ghcr.io/...
 sudo docker stack deploy -c compose.yml mil-zaehler
 ```
 
-📸 `images/kn04-e-stack-deploy.png`
+📸 ![alt text](<Screenshot 2026-05-05 024527.png>)
 
 ---
 
@@ -490,8 +482,6 @@ sudo docker stack deploy -c compose.yml mil-zaehler
 **Ursache:** Der Befehl wurde auf einem Worker Node ausgeführt.
 
 **Lösung:** Deploy auf dem Leader Manager Node durchführen.
-
-📸 `images/kn04-e-manager-error.png`
 
 ---
 
@@ -505,8 +495,6 @@ sudo docker stack deploy -c compose.yml mil-zaehler
 sudo docker login ghcr.io
 ```
 
-📸 `images/kn04-e-no-image-error.png`
-
 ---
 
 ### Stack prüfen
@@ -516,7 +504,7 @@ sudo docker stack services mil-zaehler
 sudo docker stack ps mil-zaehler
 ```
 
-📸 `images/kn04-e-stack-ps.png`
+📸 ![alt text](<Screenshot 2026-05-05 025330.png>)
 
 ---
 
@@ -528,7 +516,7 @@ replicas: 4
 
 **Beschreibung:** Die Anzahl Replicas wurde reduziert.
 
-📸 `images/kn04-e-scale-down.png`
+📸 ![alt text](<Screenshot 2026-05-05 025406.png>)
 
 ---
 
@@ -538,8 +526,6 @@ Ein Worker Node wurde in AWS terminiert.
 
 **Beschreibung:** Docker Swarm hat die Container automatisch auf den verbleibenden Worker verschoben.
 
-📸 `images/kn04-e-node-failure.png`
-
 ---
 
 ### Stack löschen
@@ -548,7 +534,7 @@ Ein Worker Node wurde in AWS terminiert.
 sudo docker stack rm mil-zaehler
 ```
 
-📸 `images/kn04-e-stack-remove.png`
+📸 ![alt text](<Screenshot 2026-05-05 025943.png>)
 
 ---
 
