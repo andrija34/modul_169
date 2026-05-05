@@ -1,6 +1,7 @@
 ```
-# KN04 -- Containers in Action & Orchestration# EinführungIn diesem Kompetenznachweis wurden verschiedene Docker- und Docker-Swarm-Technologien praktisch umgesetzt.  Dabei wurden Container erstellt, verwaltet, orchestriert und skaliert. Zusätzlich wurde ein Docker-Swarm-Cluster mit mehreren Nodes aufgebaut.Die Arbeiten wurden auf AWS EC2 Instanzen durchgeführt.---# A) Docker Image erstellen, Registry und Deployment## ZielIn diesem Teil wurde ein eigenes Docker Image erstellt, angepasst und in eine Container Registry hochgeladen. Danach wurde die Anwendung auf einer AWS EC2 Instanz gestartet.---# Repository klonenZuerst wurde das Repository geklont.```bashgit clone <repo-url>cd container-bootstrap/01_container
+KN04 -- Containers in Action & Orchestration# EinführungIn diesem Kompetenznachweis wurden verschiedene Docker- und Docker-Swarm-Technologien praktisch umgesetzt.  Dabei wurden Container erstellt, verwaltet, orchestriert und skaliert. Zusätzlich wurde ein Docker-Swarm-Cluster mit mehreren Nodes aufgebaut.Die Arbeiten wurden auf AWS EC2 Instanzen durchgeführt.--
 ```
+A) Docker Image erstellen, Registry und Deployment## ZielIn diesem Teil wurde ein eigenes Docker Image erstellt, angepasst und in eine Container Registry hochgeladen. Danach wurde die Anwendung auf einer AWS EC2 Instanz gestartet.---# Repository klonenZuerst wurde das Repository geklont.```bashgit clone <repo-url>cd container-bootstrap/01_container
 
 Beschreibung
 ------------
